@@ -1,0 +1,7 @@
+<h1> All messages</h1>
+<% @messages.each do |message| %>
+  <li>
+    <%= message.phone_number%>
+    <%= message.content %>
+  </li>
+<% end %>
