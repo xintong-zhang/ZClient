@@ -1,7 +1,21 @@
 require 'spec_helper'
 
-describe "Message pages" do
+describe "Message pages" do 
   subject { page }
   before{ visit root_path}
-  it { should have_selector('h1', text: "All messages")}
+
+  describe "visit right page" do
+    it { should have_selector('h1', text: "All messages")}
+  end
+  describe "can post message" do
+    Message.delete_all 
+    Message.create(:phone_number=>"111111111111", :content=>"Hi from RSPEC")
+    it {should have_content("Hi from RSPEC")}
+  end
+  describe "can delete message" do
+    Message.delete_all
+    Message.create(:phone_number=>"111111111111", :content=>"Hi from RSPEC")
+    before{  click_button "Destroy"}
+    it{should_not have_content("Hi from RSPEC")}    
+  end
 end
