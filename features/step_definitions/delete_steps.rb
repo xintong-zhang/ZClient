@@ -15,7 +15,6 @@
                 page.should(have_content("All messages"))
                 end
                Then(/^the deleted item should not show up$/) do
-                 debugger
                 page.should_not(have_content("why"))               
                end
               Given(/^there is no question$/) do

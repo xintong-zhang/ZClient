@@ -1,5 +1,4 @@
 Feature: Delete
-@javascript
 	Scenario: successful delete
 		Given there is a question "why"
 		And a user visits the messages page
