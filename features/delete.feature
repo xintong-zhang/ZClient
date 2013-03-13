@@ -1,5 +1,6 @@
 Feature: Delete
-        Scenario: successful delete
+@javascript
+	Scenario: successful delete
 		Given there is a question "why"
 		And a user visits the messages page
 		Then there is destroy button

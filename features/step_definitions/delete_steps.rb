@@ -1,5 +1,6 @@
 	      Given(/^there is a question "(.*?)"$/) do |arg1|
-                  Message.create(:phone_number => "111111111111", :content => arg1)
+                Message.delete_all  
+                Message.create(:phone_number => "111111111111", :content => arg1)
                end 
                 And /^a user visits the messages page$/ do
                   visit root_path
@@ -14,7 +15,8 @@
                 page.should(have_content("All messages"))
                 end
                Then(/^the deleted item should not show up$/) do
-                page.should_not(have_content("111111111111"))               
+                 debugger
+                page.should_not(have_content("why"))               
                end
               Given(/^there is no question$/) do
                 Message.delete_all
