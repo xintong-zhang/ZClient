@@ -3,5 +3,6 @@
   <li>
     <%= message.phone_number%>
     <%= message.content %>
+    <%= button_to "Destroy", {:controler=>"messages",:action=>"destroy",:id=>message.id} %>
   </li>
 <% end %>

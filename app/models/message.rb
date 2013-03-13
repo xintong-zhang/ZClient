@@ -1,3 +1,3 @@
 class Message < ActiveRecord::Base
-  attr_accessible :content, :phone_number
+  attr_accessible :content, :phone_number, :flag
 end
