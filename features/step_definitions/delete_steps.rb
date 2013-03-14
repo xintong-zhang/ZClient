@@ -11,9 +11,6 @@
 	        When(/^the user clicks Destroy button$/) do
                   click_button "Destroy"
                 end
-                Then(/^he should see the same page$/) do
-                page.should(have_content("All messages"))
-                end
                Then(/^the deleted item should not show up$/) do
                 page.should_not(have_content("why"))               
                end

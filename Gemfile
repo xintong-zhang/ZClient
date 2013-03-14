@@ -7,7 +7,6 @@ gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 gem 'rspec-rails'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,6 +17,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
+  gem 'libv8'
+  gem 'less-rails'
+  gem 'therubyracer'
 end
 
 gem 'jquery-rails'

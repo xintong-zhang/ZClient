@@ -5,7 +5,7 @@ describe "Message pages" do
   before{ visit root_path}
 
   describe "visit right page" do
-    it { should have_selector('h1', text: "All messages")}
+    it { should have_selector('title', text: "ZClient")}
   end
   describe "can post message" do
     Message.delete_all 

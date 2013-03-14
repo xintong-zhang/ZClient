@@ -4,4 +4,4 @@ Feature: Index
 	Scenario: Successful message
 		Given a user send a question "Hi. How are you?"
 	        When he visits the messages page
-		Then he should see his message
+		Then he should see "Hi. How are you?"

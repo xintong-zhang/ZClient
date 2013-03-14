@@ -1,8 +1,18 @@
-<h1> All messages</h1>
+<table class="table">
 <% @messages.each do |message| %>
-  <li>
-    <%= message.phone_number%>
-    <%= message.content %>
-    <%= button_to "Destroy", {:controler=>"messages",:action=>"destroy",:id=>message.id} %>
-  </li>
+  <tr>
+    <th>
+      <ul class="thumbnails">
+        <li class="span2">
+          <a href="#" class="thumbnail">
+          <%= link_to image_tag("images/zest.png",alt:""),'#' %>
+          </a>
+        </li>
+      </ul>
+    </th>
+    <th><%= message.phone_number%></th>
+    <th><%= message.content %></th>
+    <th><%= button_to "Destroy", {:controler=>"messages",:action=>"destroy",:id=>message.id} %></th>
+  </tr>      
 <% end %>
+</table>
