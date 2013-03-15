@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -24,6 +25,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+group :development do
+  gem 'quiet_assets'
+end
 
 group :test do
   gem 'capybara'

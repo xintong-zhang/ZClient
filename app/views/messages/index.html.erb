@@ -1,18 +1,3 @@
-<table class="table">
-<% @messages.each do |message| %>
-  <tr>
-    <th>
-      <ul class="thumbnails">
-        <li class="span1">
-          <a href="#" class="thumbnail">
-          <%= link_to image_tag("zest.png",alt:""),'#' %>
-          </a>
-        </li>
-      </ul>
-    </th>
-    <th><%= message.phone_number%></th>
-    <th><%= message.content %></th>
-    <th><%= button_to "Destroy", {:controler=>"messages",:action=>"destroy",:id=>message.id} %></th>
-  </tr>      
-<% end %>
-</table>
+<div id="messages">
+  <%= render @messages %>
+</div>

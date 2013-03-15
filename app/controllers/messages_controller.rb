@@ -1,6 +1,11 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.where(:flag => true)
+      @messages = Message.where("flag = ? and created_at > ?", true, Time.at(params[:after].to_i+1))
+      respond_to do |format|
+        format.html
+        format.js
+      end
+  
   end
   def destroy
     @message = Message.find(params[:id])
