@@ -3,6 +3,7 @@
                 Message.create(:phone_number => "111111111111", :content => arg1)
                end 
                 And /^a user visits the messages page$/ do
+                  FactoryGirl.create(:cartoon)
                   visit root_path
                 end
                 Then /^there is destroy button$/ do

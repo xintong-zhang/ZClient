@@ -1,8 +1,13 @@
 require 'spec_helper'
+require 'factory_girl'
+
 
 describe "Message pages" do 
   subject { page }
-  before{ visit root_path}
+  before{ 
+    FactoryGirl.create(:cartoon)
+    visit root_path
+  }
 
   describe "visit right page" do
     it { should have_selector('title', text: "ZClient")}
