@@ -1,3 +1,15 @@
-<div id="messages">
-  <%= render @messages %>
+<div id = "page">
+  <div style = "overflow:scroll; height:800px">
+    <h2> <%= pluralize(@messages.size, 'unread message') %></h2>  
+    <div id="messages">
+      <%= render @messages %>
+    </div>
+  </div>
+  <div style = "color:red;"> <%= flash[:notice] %> </div>
+  <h3>
+  Send an email to
+  <%= form_tag newmail_path do %>
+    <%= text_field_tag :email %>
+    <%= submit_tag "Send" %>
+  <% end %>
 </div>

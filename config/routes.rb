@@ -1,6 +1,7 @@
 ZClient::Application.routes.draw do
   root :to => "messages#index"
-  match '/destroy/:id', to:'messages#destroy' 
+  match '/destroy/:id', to:'messages#destroy'  
+  match '/newmail',to:'messages#newmail', as:'newmail'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

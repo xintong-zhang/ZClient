@@ -1,0 +1,13 @@
+<h1>Here are today's message.</h1>
+<table>
+  <tr> 
+    <th>Phone number</th>
+    <th>Message</th>
+  </tr>
+  <% @messages.each do |m| %>
+    <tr>
+      <th><%= m.phone_number%></th>
+      <th><%= m.content %></th>
+    </tr>
+  <% end %>
+</table>

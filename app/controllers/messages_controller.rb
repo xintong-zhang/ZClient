@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
       end
   
   end
+  
   def destroy
     @message = Message.find(params[:id])
     @message.flag = false
@@ -16,4 +17,15 @@ class MessagesController < ApplicationController
       format.html{redirect_to root_url}
     end
   end
+  
+  def newmail
+    @email = params[:email]
+    if @email.match(/@zestfinance.com/)
+      Sender.message_list(@email).deliver
+    else
+      flash[:notice] = " Please enter a valid zest email"
+    end
+    redirect_to root_url
+  end
+  
 end

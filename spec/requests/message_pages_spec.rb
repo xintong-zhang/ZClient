@@ -20,7 +20,7 @@ describe "Message pages" do
   describe "can delete message" do
     Message.delete_all
     Message.create(:phone_number=>"111111111111", :content=>"Hi from RSPEC")
-    before{  click_button "Destroy"}
+    before{  click_button "Read"}
     it{should_not have_content("Hi from RSPEC")}    
   end
 end
