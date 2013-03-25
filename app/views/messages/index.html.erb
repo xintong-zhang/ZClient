@@ -1,16 +1,8 @@
 <div id = "page">
-  <p class = "lead"> <strong> <%= pluralize(@messages.size, 'unread message') %></strong> </p> 
+  <h2> <%= pluralize(@messages.size, ' unread message') %></h2> 
   <div style = "overflow:scroll; height:800px">
     <div id="messages">
-      <%= render @messages %>
+      <h3> <%= render @messages %></h3>
     </div>
   </div>
-  <% if flash[:notice]%>
-    <div class = "alert-message"> <%= flash[:notice] %> </div>
-  <% end %>
-  <h3>Send an email to</h3>
-  <%= form_tag newmail_path do %>
-    <%= text_field_tag :email %>
-    <%= submit_tag "Send" %>
-  <% end %>
-</div>
+ </div>

@@ -1,0 +1,8 @@
+  <% if flash[:notice]%>
+    <div class = "alert-message"> <%= flash[:notice] %> </div>
+  <% end %>
+  <h3>Send an email to</h3>
+  <%= form_tag newmail_path do %>
+    <%= text_field_tag :email %>
+    <%= submit_tag "Send" %>
+  <% end %>

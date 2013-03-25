@@ -4,5 +4,5 @@ $(function(){
 
 function updateMessages(){
         var after = $('.message:last').attr('data-time');
-      	$.getScript("/?after=" + after);
+      	$.getScript("/messages?after=" + after);
 }

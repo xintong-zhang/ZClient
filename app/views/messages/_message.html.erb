@@ -20,7 +20,7 @@
           <b>
             <%= message.content %>
           </b>
-         <%= link_to "Read", {:controler=>"messages",:action=>"destroy",:id=>message.id} %>
+         <%= link_to "Mark as Read", {:controler=>"messages",:action=>"destroy",:id=>message.id} %>
         </p>
         <small><%= message.cartoon.name %></small>
       </div>

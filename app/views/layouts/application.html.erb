@@ -14,8 +14,10 @@
     <div class="navbar-inner">
       <div class="container-fluid">
         <a class="brand"><h2> ZMessage</h2></a>
+        <% if current_page?(:controller=>'messages',:action=>'index')%>
+          <a class="brand"><h2><%= button_to "End Conference",{:controller=>"messages", :action=>"end"} %></h2></a>
+        <% end %>  
       </div>
-    </div>
     <div class = "container-fluid">
       <div class = "span18"> <%= yield %></div>
     </div>

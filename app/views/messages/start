@@ -1,0 +1,3 @@
+<h2>Welcome to ZMessage</h2>
+<h2>Start Conference now!</h2>
+<h3><%= button_to "Start",{:controller=> "messages", :action=> "clear"}%></h3>
