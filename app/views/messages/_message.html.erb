@@ -1,27 +1,29 @@
-<table class="table">
-<div class = "message" data-time="<%= message.created_at.to_i %>">
-  <tr>
-    <th>
-      <ul class="thumbnails">
-        <li class="span1">
-          <% if message.cartoon == nil %>
-            <% c = Cartoon.first(:order =>"RANDOM()") %>
-            <% message.cartoon = c %>
-            <% message.save %>
-          <% else %>
-            <% c = message.cartoon %>
-          <% end %>
+<div class = "row">
+  <div class = "message" data-time="<%= message.created_at.to_i %>">
+    <blockquote>
+      <div class = "span2">
+        <ul class="thumbnails">
+          <li class="span1", style = "display:inline">
+            <% if message.cartoon == nil %>
+              <% c = Cartoon.first(:order =>"RANDOM()") %>
+              <% message.cartoon = c %>
+              <% message.save %>
+            <% else %>
+              <% c = message.cartoon %>
+            <% end %>
             <%= link_to image_tag(c.url,alt:""),'#' %>
         </li>
       </ul>
-    </th>
-    <th><%= message.phone_number%></th>
-    <div style="text-align: left">
-      <th><%= message.content %></th>
     </div>
-    <div style="text-align: right">
-      <th><%= button_to "Read", {:controler=>"messages",:action=>"destroy",:id=>message.id} %></th>
-    </div>
-  </tr>       
+      <div class = "span14">
+        <p>
+          <b>
+            <%= message.content %>
+          </b>
+         <%= link_to "Read", {:controler=>"messages",:action=>"destroy",:id=>message.id} %>
+        </p>
+        <small><%= message.cartoon.name %></small>
+      </div>
+    </blockquote>
+  </div>
 </div>
-</table>
